@@ -1,3 +1,7 @@
+from tools import validator
+from tools.validator import Validator
+
+
 class Account:
 	def __init__(self, id, name, account_type, account_number):
 		self.id = id
@@ -11,8 +15,7 @@ class Account:
 
 	@id.setter
 	def id(self, id):
-		#todo : Add Validator
-		self._id = id
+		self._id = validator.id_validator(id, 'invalid id')
 
 	@property
 	def name(self):
@@ -20,8 +23,7 @@ class Account:
 
 	@name.setter
 	def name(self, name):
-		#todo : Add Validator
-		self._name = name
+		self._name = Validator.name_validator(name, "invalid name")
 
 	@property
 	def account_type(self):
@@ -29,8 +31,7 @@ class Account:
 
 	@account_type.setter
 	def account_type(self, account_type):
-		#todo : Add Validator
-		self._account_type = account_type
+		self._account_type = Validator.account_type_validator(account_type, "invalid account_type")
 
 	@property
 	def account_number(self):
@@ -38,8 +39,7 @@ class Account:
 
 	@account_number.setter
 	def account_number(self, account_number):
-		#todo : Add Validator
-		self._account_number = account_number
+		self._account_number = Validator.account_number_validator(account_number, "invalid number")
 
 	def __repr__(self):
 		return f"{self.__dict__}"

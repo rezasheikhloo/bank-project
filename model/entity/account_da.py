@@ -22,7 +22,7 @@ class AccountDa:
 
 	def edit(self, account):
 		self.connect()
-		#todo : complete sql command and parameters
+		# todo : complete sql command and parameters
 		self.cursor.execute("update account_tbl set    where id=%s",[])
 		self.disconnect(commit = True)
 

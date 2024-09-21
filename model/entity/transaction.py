@@ -1,3 +1,7 @@
+from tools import validator
+from tools.validator import Validator
+
+
 class Transaction:
 	def __init__(self, id, creation_date, status, amount):
 		self.id = id
@@ -11,8 +15,7 @@ class Transaction:
 
 	@id.setter
 	def id(self, id):
-		#todo : Add Validator
-		self._id = id
+		self._id = validator.id_validator(id, 'invalid id')
 
 	@property
 	def creation_date(self):
@@ -20,8 +23,7 @@ class Transaction:
 
 	@creation_date.setter
 	def creation_date(self, creation_date):
-		#todo : Add Validator
-		self._creation_date = creation_date
+		self._creation_date = Validator.creation_date_validator(creation_date, "invalid creation_date")
 
 	@property
 	def status(self):
@@ -29,8 +31,7 @@ class Transaction:
 
 	@status.setter
 	def status(self, status):
-		#todo : Add Validator
-		self._status = status
+		self._status = Validator.status_validator(status, "invalid status")
 
 	@property
 	def amount(self):
@@ -38,8 +39,7 @@ class Transaction:
 
 	@amount.setter
 	def amount(self, amount):
-		#todo : Add Validator
-		self._amount = amount
+		self._amount = validator.amount_validator(amount, "invalid amount")
 
 	def __repr__(self):
 		return f"{self.__dict__}"

@@ -1,3 +1,7 @@
+from tools import validator
+from tools.validator import Validator
+
+
 class Client:
 	def __init__(self, id, name, family, birth_date):
 		self.id = id
@@ -11,8 +15,7 @@ class Client:
 
 	@id.setter
 	def id(self, id):
-		#todo : Add Validator
-		self._id = id
+		self._id = validator.id_validator(id, 'invalid id')
 
 	@property
 	def name(self):
@@ -20,8 +23,7 @@ class Client:
 
 	@name.setter
 	def name(self, name):
-		#todo : Add Validator
-		self._name = name
+		self._name = Validator.name_validator(name, "invalid name")
 
 	@property
 	def family(self):
@@ -29,8 +31,7 @@ class Client:
 
 	@family.setter
 	def family(self, family):
-		#todo : Add Validator
-		self._family = family
+		self._family = Validator.family_validator(family, "invalid family")
 
 	@property
 	def birth_date(self):
@@ -38,8 +39,7 @@ class Client:
 
 	@birth_date.setter
 	def birth_date(self, birth_date):
-		#todo : Add Validator
-		self._birth_date = birth_date
+		self._birth_date = validator.birth_date_validator(birth_date, "invalid birth_date")
 
 	def __repr__(self):
 		return f"{self.__dict__}"
