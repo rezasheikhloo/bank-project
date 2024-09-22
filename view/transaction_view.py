@@ -31,13 +31,13 @@ def select_transaction(event):
 
 
 def save_click():
-    database.save(client.get(), operation.get(), quantity.get())
+    database.save(creation_date.get(), status.get(), amount.get())
     msg.showinfo("Save", "transaction Saved Successfully")
     reset_form()
 
 
 def edit_click():
-    database.edit(id.get(), client.get(), operation.get(), quantity.get())
+    database.edit(id.get(), creation_date.get(), status.get(), amount.get())
     msg.showinfo("Edit", "transaction Edited Successfully")
     reset_form()
 
