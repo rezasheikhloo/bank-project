@@ -5,9 +5,9 @@ import database
 
 def reset_form():
     id.set(0)
-    client.set("")
-    operation.set("")
-    quantity.set(0)
+    creation_date.set("")
+    status.set("")
+    amount.set(0)
 
     total_var.set(f"Total : {database.total()}")
     refresh_table()
@@ -25,9 +25,9 @@ def refresh_table():
 def select_transaction(event):
     transaction = table.item(table.focus())["values"]
     id.set(transaction[0])
-    client.set(transaction[1])
-    operation.set(transaction[2])
-    quantity.set(transaction[3])
+    creation_date.set(transaction[1])
+    status.set(transaction[2])
+    amount.set(transaction[3])
 
 
 def save_click():
