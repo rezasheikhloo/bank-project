@@ -17,14 +17,16 @@ class EmployeeDa:
 
     def save(self, employee):
         self.connect()
-        #todo : complete sql command and parameters
-        self.cursor.execute("insert into employee_tbl () values ()", [])
+        self.cursor.execute("INSERT INTO employee_tbl (username,password,id,name,family,job_title) VALUES (%s,%s,%s,%s,%s)",
+            [employee.username, employee.password, employee.id, employee.name, employee.family,
+             employee.job_title])
         self.disconnect(commit=True)
 
     def edit(self, employee):
         self.connect()
-        #todo : complete sql command and parameters
-        self.cursor.execute("update employee_tbl set    where id=%s", [])
+        self.cursor.execute("UPDATE employee_tbl SET password=%s,id=%s,name=%s,family=%s ,job_title=%s WHERE username=%s",
+            [employee.password, employee.id, employee.name, employee.family, employee.job_title,
+             employee.username])
         self.disconnect(commit=True)
 
     def remove(self, id):

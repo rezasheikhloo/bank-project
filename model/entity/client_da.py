@@ -16,14 +16,16 @@ class ClientDa:
 
 	def save(self, client):
 		self.connect()
-		#todo : complete sql command and parameters
-		self.cursor.execute("insert into client_tbl () values ()",[])
+		self.cursor.execute("INSERT INTO client_tbl (username,password,id,name,family,birth_date) VALUES (%s,%s,%s,%s,%s)",
+            [client.username, client.password, client.id, client.name, client.family,
+             client.birth_date])
 		self.disconnect(commit = True)
 
 	def edit(self, client):
 		self.connect()
-		#todo : complete sql command and parameters
-		self.cursor.execute("update client_tbl set    where id=%s",[])
+		self.cursor.execute("UPDATE client_tbl SET password=%s,id=%s,name=%s,family=%s ,birth_date=%s WHERE username=%s",
+            [client.password, client.id, client.name, client.family, client.birth_date,
+             client.username])
 		self.disconnect(commit = True)
 
 	def remove(self, id):
