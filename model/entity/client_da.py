@@ -5,7 +5,7 @@ from client import Client
 class ClientDa:
 
 	def connect(self):
-		self.connection = mysql.connector.connect(host="localhost", user="root", password="root123", database="mft")
+		self.connection = mysql.connector.connect(host="localhost", user="root", password="Root123@", database="mft")
 		self.cursor = self.connection.cursor()
 
 	def disconnect(self, commit=False):
