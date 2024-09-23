@@ -108,3 +108,7 @@ Button(win, text="Remove", width=7, command=remove_click).place(x=160, y=320)
 reset_form()
 
 win.mainloop()
+
+
+def transactionView():
+    pass

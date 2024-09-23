@@ -1,4 +1,4 @@
-from view.person_view import PersonView
+from view.transaction_view import transactionView
 
 
-ui = PersonView()
+ui = transactionView()

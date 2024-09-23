@@ -1,6 +1,5 @@
 from tkinter import *
-from tkinter import ttk
-from view.component import Table
+from tools.component import Table
 
 person_list = [(1, "ali", "alipour", 20),
                (2, "reza", "rezaii", 24)]

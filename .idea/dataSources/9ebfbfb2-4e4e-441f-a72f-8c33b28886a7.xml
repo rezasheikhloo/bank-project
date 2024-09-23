@@ -998,7 +998,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="mft">
-      <LastIntrospectionLocalTimestamp>2024-09-23.08:40:04</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-09-23.09:39:24</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="290" parent="1" name="mysql">
@@ -1039,36 +1039,113 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="300" parent="299" name="username">
-      <DasType>varchar(20)|0s</DasType>
-      <NotNull>1</NotNull>
+    <table id="300" parent="289" name="client_tbl">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="301" parent="289" name="employee_tbl">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="302" parent="289" name="transaction_tbl">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="303" parent="299" name="username">
+      <DasType>int|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="301" parent="299" name="password">
-      <DasType>varchar(20)|0s</DasType>
+    <column id="304" parent="299" name="password">
+      <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="302" parent="299" name="name">
-      <DasType>varchar(30)|0s</DasType>
+    <column id="305" parent="299" name="id">
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="303" parent="299" name="account_type">
-      <DasType>varchar(20)|0s</DasType>
+    <column id="306" parent="299" name="name">
+      <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="304" parent="299" name="account_number">
+    <column id="307" parent="299" name="account_type">
       <DasType>int|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="305" parent="299" name="PRIMARY">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="306" parent="299" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
+    <column id="308" parent="299" name="account_number">
+      <DasType>int|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="309" parent="300" name="username">
+      <DasType>int|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="310" parent="300" name="password">
+      <DasType>int|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="311" parent="300" name="id">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="312" parent="300" name="name">
+      <DasType>int|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="313" parent="300" name="family">
+      <DasType>int|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="314" parent="300" name="birth_date">
+      <DasType>int|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="315" parent="301" name="username">
+      <DasType>int|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="316" parent="301" name="password">
+      <DasType>int|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="317" parent="301" name="id">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="318" parent="301" name="name">
+      <DasType>int|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="319" parent="301" name="family">
+      <DasType>int|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="320" parent="301" name="job_title">
+      <DasType>int|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="321" parent="302" name="password">
+      <DasType>int|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="322" parent="302" name="id">
+      <DasType>int|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="323" parent="302" name="creation_date">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="324" parent="302" name="status">
+      <DasType>int|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="325" parent="302" name="amount">
+      <DasType>int|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="326" parent="302" name="username">
+      <DasType>int|0s</DasType>
+      <Position>6</Position>
+    </column>
   </database-model>
 </dataSource>
