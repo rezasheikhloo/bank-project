@@ -7,7 +7,6 @@ def reset_form():
     id.set(0)
     status.set("")
     amount.set(0)
-    quantity.set(0)
     date_time.set(0)
     source_account.set("")
     destination_account.set("")
@@ -28,8 +27,8 @@ def refresh_table():
 def select_transaction(event):
     transaction = table.item(table.focus())["values"]
     id.set(transaction[0])
-    client.set(transaction[1])
-    operation.set(transaction[2])
+   status.set(transaction[1])
+    amount.set(transaction[2])
     quantity.set(transaction[3])
 
 

@@ -1,7 +1,6 @@
 import mysql.connector
 
-from account import Account
-
+from  model.entity.account import Account
 
 class AccountDa:
 
@@ -12,8 +11,8 @@ class AccountDa:
     def disconnect(self, commit=False):
         if commit:
             self.connection.commit()
-        self.cursor.close()
-        self.connection.close()
+            self.cursor.close()
+            self.connection.close()
 
     def save(self, account):
         self.connect()

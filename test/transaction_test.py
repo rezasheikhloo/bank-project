@@ -2,11 +2,11 @@ from model.entity.account import Account
 from model.entity.client import Client
 from model.entity.transaction import Transaction
 
-client1 = Client(1, "ali", "alipour")
+client1 = Client(1, "ali", "alipour","ali123","ALI23")
 account1 = Account(1, "saving", "1234567890123456", client1)
 
 
-client2 = Client(1, "reza", "rezaii")
+client2 = Client(1, "reza", "rezaii","reza345","Reza1234")
 account2 = Account(1, "saving", "1234567890123456", client2)
 
 

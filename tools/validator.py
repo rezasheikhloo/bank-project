@@ -5,7 +5,7 @@ from datetime import datetime,date
 class Validator:
     @classmethod
     def id_validator(cls, id, message):
-        if type(id) == int and id > 0:
+        if type(id) == int and id >= 0:
             return id
         else:
             raise ValueError(message)

@@ -1,6 +1,6 @@
 import mysql.connector
 
-from transaction import Transaction
+from  model.entity.transaction import Transaction
 
 
 class TransactionDa:
