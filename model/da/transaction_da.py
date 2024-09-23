@@ -18,17 +18,17 @@ class TransactionDa:
     def save(self, transaction):
         self.connect()
         self.cursor.execute(
-            "INSERT INTO transaction_tbl (username,password,id,creation_date,status,amount) VALUES (%s,%s,%s,%s,%s)",
-            [transaction.username, transaction.password, transaction.id, transaction.creation_date, transaction.status,
-             transaction.amount])
+            "INSERT INTO transaction_tbl (id,status,amount,date_time,source_account,destination_account) VALUES (%s,%s,%s,%s,%s,%s)",
+            [transaction.id, transaction.status, transaction.amount, transaction.date_time, transaction.source_account,
+             transaction.destination_account])
         self.disconnect(commit=True)
 
     def edit(self, transaction):
         self.connect()
         self.cursor.execute(
-            "UPDATE transaction_tbl SET password=%s,id=%s,creation_date=%s,status=%s ,amount=%s WHERE username=%s",
-            [transaction.password, transaction.id, transaction.creation_date, transaction.status, transaction.amount,
-             transaction.username])
+            "UPDATE transaction_tbl SET id=%s,status=%s,amount=%s,date_time=%s,source_account=%s ,destination_account=%s WHERE id=%s",
+            [transaction.id, transaction.date_time, transaction.status, transaction.amount, transaction.source_account,
+             transaction.destination_account])
         self.disconnect(commit=True)
 
     def remove(self, id):

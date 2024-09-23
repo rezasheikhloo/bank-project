@@ -17,14 +17,14 @@ class AccountDa:
 
     def save(self, account):
         self.connect()
-        self.cursor.execute("INSERT INTO account_tbl (username,password,id,name,account_type,account_number) VALUES (%s,%s,%s,%s,%s)",
-            [account.username, account.password, account.id, account.name, account.account_type, account.account_number])
+        self.cursor.execute("INSERT INTO account_tbl (id,account_type,account_number,client) VALUES (%s,%s,%s,%s)",
+            [account.id, account.client, account.account_type, account.account_number])
         self.disconnect(commit=True)
 
     def edit(self, account):
         self.connect()
-        self.cursor.execute("UPDATE account_tbl SET password=%s,id=%s,name=%s,account_type=%s ,account_number=%s WHERE username=%s",
-            [account.password, account.id, account.name, account.account_type, account.account_number, account.username])
+        self.cursor.execute("UPDATE account_tbl SET id=%s,client=%s,account_type=%s ,account_number=%s WHERE id=%s",
+            [account.id, account.client, account.account_type, account.account_number])
         self.disconnect(commit=True)
 
     def remove(self, id):

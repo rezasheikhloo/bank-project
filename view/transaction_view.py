@@ -5,9 +5,12 @@ import database
 
 def reset_form():
     id.set(0)
-    client.set("")
-    operation.set("")
+    status.set("")
+    amount.set(0)
     quantity.set(0)
+    date_time.set(0)
+    source_account.set("")
+    destination_account.set("")
 
     total_var.set(f"Total : {database.total()}")
     refresh_table()
