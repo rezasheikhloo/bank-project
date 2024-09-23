@@ -1,6 +1,4 @@
-from model.da.person_da import PersonDa
-from model.entity.client import Person
-
+from controller.person_da import PersonDa
 
 
 class PersonBl:

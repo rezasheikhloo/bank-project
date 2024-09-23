@@ -1,4 +1,4 @@
-from model.bl.person_bl import PersonBl
+from controller.person_bl import PersonBl
 from model.entity.client import Person
 from tools.decorators import exception_handling
 
