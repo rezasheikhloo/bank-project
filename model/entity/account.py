@@ -14,7 +14,7 @@ class Account:
 
     @id.setter
     def id(self, id):
-        self._id = Validator.id_validator(id, 'invalid id')
+        self._id = Validator.id_validator(id, 'Invalid Id')
 
     @property
     def account_type(self):
@@ -30,7 +30,7 @@ class Account:
 
     @account_number.setter
     def account_number(self, account_number):
-        self._account_number = Validator.account_number_validator(account_number, "invalid number")
+        self._account_number = Validator.account_number_validator(account_number, "Invalid Number")
 
     @property
     def client(self):

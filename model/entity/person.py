@@ -14,7 +14,7 @@ class Person:
 
     @id.setter
     def id(self, id):
-        self._id = Validator.id_validator(id, 'invalid id')
+        self._id = Validator.id_validator(id, "Invalid Id")
 
     @property
     def name(self):
@@ -22,7 +22,7 @@ class Person:
 
     @name.setter
     def name(self, name):
-        self._name = Validator.name_validator(name, "invalid name")
+        self._name = Validator.name_validator(name, "Invalid Name")
 
     @property
     def family(self):
@@ -30,4 +30,8 @@ class Person:
 
     @family.setter
     def family(self, family):
-        self._family = Validator.family_validator(family, "invalid family")
+        self._family = Validator.family_validator(family, "Invalid Family")
+
+
+    def __repr__(self):
+        return f"{self.__dict__}"
