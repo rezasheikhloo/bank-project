@@ -11,7 +11,7 @@ def reset_form():
 
     total_var.set(f"Total : {database.total()}")
     refresh_table()
-    name_txt.focus_set()
+    creation_date_txt.focus_set()
 
 
 def refresh_table():
@@ -63,32 +63,32 @@ id = IntVar()
 Entry(win, textvariable=id, state="readonly").place(x=90, y=20)
 
 # Name
-Label(win, text="client").place(x=20, y=60)
-name = StringVar()
-name_txt = Entry(win, textvariable=name)
-name_txt.place(x=90, y=60)
+Label(win, text="creation_date").place(x=20, y=60)
+creation_date = StringVar()
+creation_date_txt = Entry(win, textvariable=creation_date)
+creation_date_txt.place(x=90, y=60)
 
 # Brand
-Label(win, text="operation").place(x=20, y=100)
-transaction_type = StringVar()
-Entry(win, textvariable=operation).place(x=90, y=100)
+Label(win, text="status").place(x=20, y=100)
+status = StringVar()
+Entry(win, textvariable=status).place(x=90, y=100)
 
 # Quantity
-Label(win, text="Quantity").place(x=20, y=140)
-quantity = IntVar()
-Entry(win, textvariable=quantity).place(x=90, y=140)
+Label(win, text="amount").place(x=20, y=140)
+amount = IntVar()
+Entry(win, textvariable=amount).place(x=90, y=140)
 
 
 total_var = StringVar()
-Label(win, font=("Arial Black" , 14), textvariable=total_var).place(x=20, y=230)
+Label(win, font=("Arial Black", 14), textvariable=total_var).place(x=20, y=230)
 
 
 
 table = ttk.Treeview(win, height=15, columns=(1, 2, 3, 4), show="headings")
 table.heading(1, text="ID")
-table.heading(2, text="client")
-table.heading(3, text="operation")
-table.heading(4, text="Quantity")
+table.heading(2, text="creation-date")
+table.heading(3, text="status")
+table.heading(4, text="amount")
 
 table.column(1, width=60)
 table.column(2, width=80)
