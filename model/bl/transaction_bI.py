@@ -1,6 +1,3 @@
-from controller.person_da import TransactionDa
-from model.entity.client import Transaction
-
 
 
 class TransactionBl:

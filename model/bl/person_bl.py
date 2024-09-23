@@ -1,4 +1,4 @@
-from controller.person_da import PersonDa
+from tools.person_da import PersonDa
 
 
 class PersonBl:

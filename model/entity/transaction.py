@@ -1,45 +1,15 @@
-from tools import validator
-from tools.validator import Validator
-
 
 class Transaction:
-	def __init__(self, id, creation_date, status, amount):
-		self.id = id
-		self.creation_date = creation_date
-		self.status = status
-		self.amount = amount
+    def __init__(self, id, name, operation, amount, date_time,source_account, destination_account):
+        self.id = id
+        self.name = name
+        self.operation = operation
+        self.amount = amount
+        self.date_time = date_time
+        self.source_account = source_account
+        self.destination_account = destination_account
 
-	@property
-	def id(self):
-		return self._id
 
-	@id.setter
-	def id(self, id):
-		self._id = validator.id_validator(id, 'invalid id')
+#     geter/setter
 
-	@property
-	def creation_date(self):
-		return self._creation_date
 
-	@creation_date.setter
-	def creation_date(self, creation_date):
-		self._creation_date = Validator.creation_date_validator(creation_date, "invalid creation_date")
-
-	@property
-	def status(self):
-		return self._status
-
-	@status.setter
-	def status(self, status):
-		self._status = Validator.status_validator(status, "invalid status")
-
-	@property
-	def amount(self):
-		return self._amount
-
-	@amount.setter
-	def amount(self, amount):
-		self._amount = validator.amount_validator(amount, "invalid amount")
-
-	def __repr__(self):
-		return f"{self.__dict__}"

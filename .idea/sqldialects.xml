@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/model/database.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/model/entity/account_da.py" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/model/entity/transaction_da.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/model/da/account_da.py" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/model/da/client_da.py" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/model/da/employee_da.py" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/model/da/transaction_da.py" dialect="MySQL" />
   </component>
   <component name="SqlResolveMappings">
-    <file url="file://$PROJECT_DIR$/model/entity/account_da.py" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
+    <file url="file://$PROJECT_DIR$/model/da/account_da.py" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
+    <file url="file://$PROJECT_DIR$/model/entity/account.py" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
   </component>
 </project>

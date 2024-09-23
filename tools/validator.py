@@ -51,33 +51,9 @@ class Validator:
         else:
             raise ValueError(message)
 
-    def birth_date_validator(birth_date, param):
-        return None
-
     @classmethod
-    def account_type_validator(cls, account_type, param):
-        pass
-
-    @classmethod
-    def job_title_validator(cls, job_title, param):
-        pass
-
-    @classmethod
-    def status_validator(cls, status, param):
-        pass
-
-    @classmethod
-    def creation_date_validator(cls, creation_date, param):
-        pass
-
-
-def amount_validator(amount, param):
-    return None
-
-
-def id_validator(id, param):
-    return None
-
-
-def birth_date_validator(birth_date, param):
-    return None
+    def account_type_validator(cls, account_type, message):
+        if re.match(r"^[a-zA-Z\s]{2,30}$", account_type):
+            return account_type
+        else:
+            raise ValueError(message)

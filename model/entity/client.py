@@ -1,45 +1,16 @@
-from tools import validator
+from model.entity.person import Person
 from tools.validator import Validator
 
 
-class Client:
-	def __init__(self, id, name, family, birth_date):
-		self.id = id
-		self.name = name
-		self.family = family
-		self.birth_date = birth_date
+class Client(Person):
+    def __init__(self, id, name, family, account_number):
+        super().__init__(id, name, family)
+        self.account_number = account_number
 
-	@property
-	def id(self):
-		return self._id
+    @property
+    def account_number(self):
+        return self._account_number
 
-	@id.setter
-	def id(self, id):
-		self._id = validator.id_validator(id, 'invalid id')
-
-	@property
-	def name(self):
-		return self._name
-
-	@name.setter
-	def name(self, name):
-		self._name = Validator.name_validator(name, "invalid name")
-
-	@property
-	def family(self):
-		return self._family
-
-	@family.setter
-	def family(self, family):
-		self._family = Validator.family_validator(family, "invalid family")
-
-	@property
-	def birth_date(self):
-		return self._birth_date
-
-	@birth_date.setter
-	def birth_date(self, birth_date):
-		self._birth_date = validator.birth_date_validator(birth_date, "invalid birth_date")
-
-	def __repr__(self):
-		return f"{self.__dict__}"
+    @account_number.setter
+    def account_number(self, account_number):
+        self._account_number = Validator.account_number_validator(account_number, "invalid number")
