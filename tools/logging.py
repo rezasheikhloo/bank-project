@@ -13,7 +13,7 @@ class Logger:
         ]
     )
 
-    
+
     @classmethod
     def info(cls, message):
         logging.info(message)
