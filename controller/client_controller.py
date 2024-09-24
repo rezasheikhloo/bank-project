@@ -6,7 +6,7 @@ from tools.decorators import exception_handling
 class ClientController:
     @staticmethod
     @exception_handling
-    def save( name, family, username, password):
+    def save(name, family, username, password):
         client = Client(0, name, family, username, password)
         ClientBl.save(client)
         return True, f"Client Saved {client}"

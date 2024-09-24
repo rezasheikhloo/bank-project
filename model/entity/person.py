@@ -1,4 +1,3 @@
-from tools import validator
 from tools.validator import Validator
 
 
@@ -33,5 +32,5 @@ class Person:
         self._family = Validator.family_validator(family, "Invalid Family")
 
 
-    def __repr__(self):
-        return f"{self.__dict__}"
+      # def __repr__(self):
+      #     return f'{self.__dict__}'

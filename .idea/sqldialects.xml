@@ -4,7 +4,6 @@
     <file url="file://$PROJECT_DIR$/model/da/account_da.py" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/model/da/client_da.py" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/model/da/transaction_da.py" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/model/entity/client.sql" dialect="MySQL" />
   </component>
   <component name="SqlResolveMappings">
     <file url="file://$PROJECT_DIR$/model/da/account_da.py" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />

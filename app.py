@@ -1,4 +1,4 @@
-from view.person_view import PersonView
+from extra.person_view import PersonView
 
 
 ui = PersonView()

@@ -1,5 +1,5 @@
 import re
-from datetime import datetime,date
+from datetime import datetime
 
 
 class Validator:
@@ -82,7 +82,7 @@ class Validator:
 
     @classmethod
     def date_time_validator(cls, date_time, message):
-        if isinstance(date_time, datetime) :
+        if isinstance(date_time, datetime):
             return date_time
         elif isinstance(date_time, str):
             try:

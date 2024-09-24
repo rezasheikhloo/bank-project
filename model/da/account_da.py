@@ -1,6 +1,6 @@
 import mysql.connector
 
-from  model.entity.account import Account
+from model.entity.account import Account
 
 class AccountDa:
 

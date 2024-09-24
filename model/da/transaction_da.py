@@ -1,7 +1,5 @@
 import mysql.connector
-
-from  model.entity.transaction import Transaction
-
+from model.entity.transaction import Transaction
 
 class TransactionDa:
 
@@ -18,7 +16,7 @@ class TransactionDa:
     def save(self, transaction):
         self.connect()
         self.cursor.execute(
-            "INSERT INTO transaction_tbl (id,status,amount,date_time,source_account,destination_account) VALUES (%s,%s,%s,%s,%s,%s)",
+           "INSERT INTO transaction_tbl (id,status,amount,date_time,source_account,destination_account) VALUES (%s,%s,%s,%s,%s,%s)",
             [transaction.id, transaction.status, transaction.amount, transaction.date_time, transaction.source_account,
              transaction.destination_account])
         self.disconnect(commit=True)
