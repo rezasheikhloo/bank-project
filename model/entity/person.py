@@ -30,3 +30,7 @@ class Person:
     @family.setter
     def family(self, family):
         self._family = Validator.family_validator(family, "Invalid Family")
+
+
+def id():
+    pass
