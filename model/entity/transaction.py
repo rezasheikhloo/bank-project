@@ -1,12 +1,11 @@
 from tools.validator import Validator
 
-
 class Transaction:
-    def __init__(self, id,  status, amount, date_time,source_account, destination_account):
+    def __init__(self, id,  status, amount, datetime, source_account, destination_account):
         self.id = id
         self.status = status
         self.amount = amount
-        self.date_time = date_time
+        self.date_time = datetime
         self.source_account = source_account
         self.destination_account = destination_account
 
