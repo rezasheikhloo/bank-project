@@ -76,23 +76,6 @@ class SignInView:
             for i in TransactionController().find_all():
                 table.insert("", END, values=i)
 
-        def Edit_Client():
-            for i in table_client.get_children():
-                table_client.delete(i)
-
-            ClientController().edit(self.id.get(), self.name.get(), self.family.get(),self.client_username.get(), self.password.get())
-            for i in ClientController().find_all(self.id.get(), self.name.get(), self.family.get(),self.client_username.get(), self.password.get()):
-                table_client.insert("", END, values=i)
-
-        def Edit_Account():
-            for i in table_sec.get_children():
-                table_sec.delete(i)
-            AccountController().edit(self.id.get(), self.account_type.get(), self.account_number.get(),
-                                     self.client.get())
-
-            for i in AccountController().find_all():
-                table_sec.insert("", END, values=i)
-
         def table_person_refresher():
             for i in table_client.get_children():
                 table_client.delete(i)
@@ -139,13 +122,10 @@ class SignInView:
 
         Button(self.window, text="Remove", command=Remove_Button).place(x=60, y=500)
 
-        Button(self.window, text="Find All Transaction", command=Find_All_Button).place(x=60, y=550)
+        Button(self.window, text="Find All Transaction", command=Find_All_Button).place(x=110, y=550)
 
-        Button(self.window, text="Edit Transaction", command=Edit_Transaction()).place(x=10, y=550)
+        Button(self.window, text="Edit Transaction", command=Edit_Transaction).place(x=10, y=550)
 
-        Button(self.window, text="Edit Client ", command=Edit_Client()).place(x=120, y=400)
-
-        Button(self.window, text="Edit Account", command=Edit_Account()).place(x=10, y=600)
 
         table = ttk.Treeview(self.window, height=20, columns=(1, 2, 3, 4, 5, 6), show="headings")
         table_client = ttk.Treeview(self.window, height=28, columns=(1, 2, 3, 4, 5, 6), show="headings")
