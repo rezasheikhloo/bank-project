@@ -1,10 +1,9 @@
-import datetime
 from commponent import *
 import tkinter.ttk as ttk
 from controller.transaction_controller import TransactionController
 from controller.account_controller import AccountController
 from controller.client_controller import ClientController
-
+import datetime
 
 class SignInView:
     def __init__(self):
@@ -127,7 +126,25 @@ class SignInView:
         Button(self.window, text="Edit Transaction", command=Edit_Transaction).place(x=10, y=550)
 
 
-        table = ttk.Treeview(self.window, height=20, columns=(1, 2, 3, 4, 5, 6), show="headings")
+        table = ttk.Treeview(self.window, height=25, columns=(1, 2, 3, 4, 5, 6), show="headings")
+        table.heading(1, text="Id")
+        table.heading(2, text="Name")
+        table.heading(3, text="Family")
+        table.heading(4, text="Status")
+        table.heading(5, text="Amount")
+        table.heading(6, text="Account Number")
+
+        table.column(1, width=70)
+        table.column(2, width=80)
+        table.column(3, width=80)
+        table.column(4, width=80)
+        table.column(5, width=90)
+        table.column(6, width=80)
+
+        table.place(x=265, y=25)
+
+        table_refresher_usuall()
+
         table_client = ttk.Treeview(self.window, height=28, columns=(1, 2, 3, 4, 5, 6), show="headings")
 
         table_sec = ttk.Treeview(self.window, height=28, columns=(1, 2, 3, 4, 5, 6), show="headings")
