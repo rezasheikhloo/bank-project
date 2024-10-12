@@ -26,3 +26,6 @@ class AccountController:
     @exception_handling
     def find_all(cls):
         pass
+
+    def delete(self, param):
+        pass

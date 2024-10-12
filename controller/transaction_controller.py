@@ -27,3 +27,6 @@ class TransactionController:
     @exception_handling
     def find_all(cls):
         pass
+
+    def delete(self, param, param1, param2, param3, param4, param5):
+        pass

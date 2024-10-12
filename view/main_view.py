@@ -3,7 +3,7 @@ import tkinter.ttk as ttk
 from controller.transaction_controller import TransactionController
 from controller.account_controller import AccountController
 from controller.client_controller import ClientController
-import datetime
+#import datetime
 
 class SignInView:
     def __init__(self):
@@ -31,33 +31,34 @@ class SignInView:
             for i in TransactionController.find_all():
                 table.insert("", END, values=i)
 
-            for i in table_client.get_children():
-                table_client.delete(i)
+            for i in table_info.get_children():
+                table_info.delete(i)
             ClientController().save(self.name.get(), self.family.get(), self.username.get(), self.password.get())
 
             for i in ClientController().find_all(self.name.get(), self.family.get(), self.username.get(), self.password.get()):
-                table_client.insert("", END, values=i)
+                table_info.insert("", END, values=i)
 
-            for i in table_sec.get_children():
-                table_sec.delete(i)
-            AccountController().save(self.account_type.get(), self.account_number.get(), self.client.get())
+            for i in table_info.get_children():
+                table_info.delete(i)
+            AccountController().save(self.account_type.get(), self.account_number.get(), self.client_name.get())
 
             for i in AccountController().find_all():
-                table_sec.insert("", END, values=i)
+                table_info.insert("", END, values=i)
 
         def Remove_Button():
             for i in table.get_children():
                 table.delete(i)
-            TransactionController().delete(self.id.get())
+            TransactionController().delete(self.id.get(), self.status.get(), self.amount.get(), self.date_time.get(),
+                                         self.source_account.get(), self.destination_account.get())
             for i in TransactionController.find_all():
                 table.insert("", END, values=i)
 
-            for i in table_sec.get_children():
-                table_sec.delete(i)
+            for i in table_info.get_children():
+                table_info.delete(i)
             AccountController().delete(self.id.get())
 
             for i in AccountController().find_all():
-                table_sec.insert("", END, values=i)
+                table_info.insert("", END, values=i)
 
         def Find_All_Button():
             for i in table.get_children():
@@ -75,25 +76,19 @@ class SignInView:
             for i in TransactionController().find_all():
                 table.insert("", END, values=i)
 
-        def table_person_refresher():
-            for i in table_client.get_children():
-                table_client.delete(i)
+        def table_transaction_refresher():
+            for i in table.get_children():
+                table_info.delete(i)
 
-            for i in ClientController.find_all():
-                table_client.insert("", END, values=i)
+            for i in ClientController.find_all(self.name.get(), self.family.get(), self.username.get(),self.password.get()):
+                table_info.insert("", END, values=i)
 
-        def table_sec_refresher():
-            for i in table_sec.get_children():
-                table_sec.delete(i)
+        def table_info_refresher():
+            for i in table_info.get_children():
+                table_info.delete(i)
 
             for i in AccountController().find_all():
-                table_sec.insert("", END, values=i)
-
-        def table_refresher_usuall():
-            for i in table.get_children():
-                table.delete(i)
-            for i in TransactionController.find_all():
-                table.insert("", END, values=i)
+                table_info.insert("", END, values=i)
 
         status, client = ClientController().save(self.name.get(), self.family.get(), self.username.get(),
                                                  self.password.get())
@@ -102,7 +97,8 @@ class SignInView:
         self.win.destroy()
         self.window = Tk()
         self.window.title("transaction")
-        self.window.geometry("900x700")
+        self.window.title("info")
+        self.window.geometry("1300x900")
 
         self.id = EntryWithLabel(self.window, "Client Id : ", 10, 25, 120, "int")
         self.status = EntryWithLabel(self.window, "Transaction Status : ", 10, 65, 120, "str")
@@ -125,44 +121,43 @@ class SignInView:
 
         Button(self.window, text="Edit Transaction", command=Edit_Transaction).place(x=10, y=550)
 
+        table = ttk.Treeview(self.window, height=25, columns=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11), show="headings")
 
-        table = ttk.Treeview(self.window, height=25, columns=(1, 2, 3, 4, 5, 6), show="headings")
         table.heading(1, text="Id")
-        table.heading(2, text="Name")
-        table.heading(3, text="Family")
-        table.heading(4, text="Status")
-        table.heading(5, text="Amount")
-        table.heading(6, text="Account Number")
+        table.heading(2, text="Status")
+        table.heading(3, text="Amount")
+        table.heading(4, text="Datetime")
+        table.heading(5, text="Source")
+        table.heading(6, text="Destination")
+        table.heading(7, text="Name")
 
-        table.column(1, width=70)
+        table.column(1, width=50)
         table.column(2, width=80)
         table.column(3, width=80)
-        table.column(4, width=80)
+        table.column(4, width=50)
         table.column(5, width=90)
         table.column(6, width=80)
 
         table.place(x=265, y=25)
 
-        table_refresher_usuall()
+        table_transaction_refresher()
 
-        table_client = ttk.Treeview(self.window, height=28, columns=(1, 2, 3, 4, 5, 6), show="headings")
+        table_info = ttk.Treeview(self.window, height=20, columns=(1, 2, 3, 4, 5), show="headings")
 
-        table_sec = ttk.Treeview(self.window, height=28, columns=(1, 2, 3, 4, 5, 6), show="headings")
-        table_sec.heading(1, text="Id")
-        table_sec.heading(2, text="Person Name")
-        table_sec.heading(3, text="Book Name")
-        table_sec.heading(4, text="Borrow Date Time")
-        table_sec.heading(5, text="Return Date Time")
-        table_sec.heading(6, text="Amount")
+        table_info.heading(1, text="Id")
+        table_info.heading(2, text="Name")
+        table_info.heading(3, text="Family")
+        table_info.heading(4, text="Account Type")
+        table_info.heading(5, text="Account Number")
 
-        table_sec.column(1, width=70)
-        table_sec.column(2, width=100)
-        table_sec.column(3, width=100)
-        table_sec.column(4, width=100)
-        table_sec.column(5, width=100)
-        table_sec.column(6, width=80)
 
-        table_sec.place(x=1350, y=5)
+        table_info.column(1, width=50)
+        table_info.column(2, width=90)
+        table_info.column(3, width=90)
+        table_info.column(4, width=70)
+        table_info.column(5, width=90)
+
+        table_info.place(x=900, y=25)
 
 
 sgn = SignInView()
