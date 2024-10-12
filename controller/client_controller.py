@@ -10,3 +10,9 @@ class ClientController:
         client = Client(0, name, family, username, password)
         ClientBl.save(client)
         return True, f"Client Saved {client}"
+
+    def edit(self, name, family, username, password):
+        pass
+
+    def find_all(self, name, family, username, password):
+        pass
