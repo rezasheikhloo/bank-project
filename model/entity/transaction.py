@@ -1,11 +1,11 @@
 from tools.validator import Validator
 
 class Transaction:
-    def __init__(self, id,  status, amount, datetime, source_account, destination_account):
+    def __init__(self, id,  status, amount, date_time, source_account, destination_account):
         self.id = id
         self.status = status
         self.amount = amount
-        self.date_time = datetime
+        self.datetime = date_time
         self.source_account = source_account
         self.destination_account = destination_account
 
@@ -40,7 +40,7 @@ class Transaction:
 
     @date_time.setter
     def date_time(self, date_time):
-        self._date_time = Validator.date_time_validator(date_time, "Invalid date_time")
+        self._date_time = Validator.date_time_validator(date_time, "Invalid datetime")
 
     @property
     def source_account(self):

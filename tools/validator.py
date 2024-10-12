@@ -89,5 +89,5 @@ class Validator:
                 return datetime.strptime(date_time, '%Y-%m-%d %H:%M')
             except:
                 raise ValueError(message)
-        else :
+        else:
             ValueError(message)
