@@ -16,7 +16,7 @@ class SignInView:
         self.username = EntryWithLabel(self.win, "username : ", 10, 95, 140, "str")
         self.password = EntryWithLabel(self.win, "Password : ", 10, 135, 140, "str")
 
-        Button(self.win, text="Sign In", width=10, command=self.SignIn_click).place(x=165, y=200)
+        Button(self.win, text="Log In", width=10, command=self.SignIn_click).place(x=165, y=200)
 
         self.win.mainloop()
 
@@ -56,7 +56,8 @@ class SignInView:
 
             for i in table.get_children():
                 table.delete(i)
-            AccountController().remove(self.id.get())
+            AccountController().remove(self.id.get(), self.account_type.get(), self.account_number.get(),
+                                       self.name.get())
 
             for i in AccountController().find_all():
                 table.insert("", END, values=i)
