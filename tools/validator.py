@@ -67,7 +67,7 @@ class Validator:
             raise ValueError(message)
 
     @classmethod
-    def source_account_validator(cls,source_account, message):
+    def source_account_validator(cls, source_account, message):
         if isinstance(source_account, str) and re.match(r"^[a-zA-Z\s]{2,30}$", source_account):
             return source_account
         else:
