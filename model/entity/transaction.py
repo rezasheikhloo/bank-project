@@ -57,7 +57,3 @@ class Transaction:
     @destination_account.setter
     def destination_account(self, destination_account):
         self._destination_account = destination_account
-
-
-    def __repr__(self):
-        return f"{self.__dict__}"

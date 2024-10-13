@@ -1,9 +1,22 @@
 from model.da.transaction_da import TransactionDa
-from model.entity import transaction
-
 
 class TransactionBl:
     @staticmethod
-    def save(person):
-        Transaction_da = TransactionDa()
-        return Transaction_da.save(transaction)
+    def save(transaction):
+        transaction_da = TransactionDa()
+        return transaction_da.save(transaction)
+
+    @staticmethod
+    def edit(transaction):
+        transaction_da = TransactionDa()
+        return transaction_da.edit(transaction)
+
+    @staticmethod
+    def remove(transaction):
+        transaction_da = TransactionDa()
+        return transaction_da.remove(transaction)
+
+    @staticmethod
+    def find_all(transaction):
+        transaction_da = TransactionDa()
+        return transaction_da.find_all(transaction)

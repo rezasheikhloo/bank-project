@@ -11,8 +11,23 @@ class ClientController:
         ClientBl.save(client)
         return True, f"Client Saved {client}"
 
-    def edit(self, name, family, username, password):
-        pass
+    @staticmethod
+    @exception_handling
+    def edit(name, family, username, password):
+        client = Client(0, name, family, username, password)
+        ClientBl.edit(client)
+        return True, f"Client edited {client}"
 
-    def find_all(self, name, family, username, password):
-        pass
+    @staticmethod
+    @exception_handling
+    def remove(name, family, username, password):
+        client = Client(0, name, family, username, password)
+        ClientBl.remove(client)
+        return True, f"Client edited {client}"
+
+    @staticmethod
+    @exception_handling
+    def find_all(name, family, username, password):
+        client = Client(0, name, family, username, password)
+        ClientBl.find_all(client)
+        return True, f"Client find_all {client}"
